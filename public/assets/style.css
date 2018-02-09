@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(38, 64, 73);
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+.jumbotron {
+    text-align: center;
+    font-size: large;
+}
+
+#warning {
+    color: rgb(221, 14, 14);
+}
+
+#header {
+    background-color: rgb(240, 237, 234);
+}
+
+#articleContainer {
+    background-color: antiquewhite;
+}

@@ -5,7 +5,10 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#articles").append("<h4>TITLE:</h4><p data-id='" + data[i]._id + "'>"
+     + data[i].title + "<h4>SUMMARY:</h4><br /><h5>LINK:</h5> www.clickhole.com"
+      + data[i].link +
+       "<br>-----------------------------------------------------------------------------------------------------------------------------------------------</p>");
   }
 });
 
