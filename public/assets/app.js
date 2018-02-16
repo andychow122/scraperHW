@@ -15,7 +15,7 @@ $.getJSON("/articles", function(data) {
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", "img", function() {
+$(document).on("click", "p", function() {
   // Empty the comments from the note section
   // $("#comments").empty();
   // Save the id from the p tag
@@ -69,12 +69,12 @@ $(document).on("click", "#savenote", function() {
       // Log the response
       console.log(data);
       // Empty the comments section
-      $("#comments").empty();
+      // $("#comments").empty();
     });
 
   // Also, remove the values entered in the input and textarea for note entry
-  $("#titleinput").val("");
-  $("#bodyinput").val("");
+  // $("#titleinput").val("");
+  // $("#bodyinput").val("");
 });
 
 console.log('hello')
