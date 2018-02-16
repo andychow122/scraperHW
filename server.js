@@ -76,6 +76,14 @@ app.get("/scrape", function(req, res) {
       result.link = $(this)
         .children()
         .attr("href");
+      result.image = $(this)
+        .children()
+        .find("figure")
+        .find("noscript")
+        .text();
+
+      console.log(result.image + " image")
+
 
       // Create a new Article using the `result` object built from scraping
       db.Article
@@ -92,6 +100,7 @@ app.get("/scrape", function(req, res) {
 
     // If we were able to successfully scrape and save an Article, send a message to the client
     res.redirect("/");
+    
   });
 });
 
@@ -113,7 +122,7 @@ app.get("/articles/:id", function(req, res) {
   // Finish the route so it finds one article using the req.params.id,
   // and run the populate method with "note",
   // then responds with the article with the note included
-  db.Article.findOne({_id: req.params.id}).populate("note")
+  db.Article.findOne({_id: req.params.id}).populate("comment")
     .then(function(dbArticle){
       res.json(dbArticle);
     }).catch(function(err) {
